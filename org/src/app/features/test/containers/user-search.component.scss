@@ -1,0 +1,97 @@
+:host {
+  font-family: Arial, serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .search-container {
+    border: 1px solid #fafafa;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .search-inputs {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+
+      .search-input {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 8px;
+      }
+
+      .search-button {
+        background: royalblue;
+        border: inherit;
+        font-weight: bolder;
+        color: white;
+        border-radius: 5px;
+        padding: 2px 22px;
+
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .search-filter-result {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .card-container {
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    .card-list {
+      display: flex;
+      min-width: 450px;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .card-element {
+        border-radius: 5px;
+        padding: 1rem;
+      }
+    }
+
+    .card-result {
+      display: flex;
+      flex-direction: column;
+
+      .card-title {
+        font-size: 28px;
+        font-weight: bolder;
+      }
+
+      .card-user {
+        margin-bottom: 8px;
+      }
+
+      .card-result-fields {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #bfbfbf;
+        padding: 1rem;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  a,
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: dodgerblue;
+    cursor: pointer;
+  }
+}

@@ -1,9 +1,9 @@
 import {Route} from '@angular/router';
-import {TestComponent} from "./features/test/containers/test.component";
+import {UserSearchComponent} from "./features/test/containers/user-search.component";
 
 export const appRoutes: Route[] = [
     {
-        component: TestComponent,
+        component: UserSearchComponent,
         path: 'test'
     }
 ];

@@ -1,0 +1,43 @@
+<div class="search-container">
+  <div class="search-inputs">
+    <input #textSearch class="search-input" />
+    <input
+      class="search-button"
+      type="button"
+      value="Pesquisar"
+      (change)="onSearch(textSearch.value)"
+    />
+  </div>
+
+  <div class="search-filter-result">
+    <p class="link-hover" *ngIf="userList.length">
+      {{ userList.length }} usuários encontrados
+      <a *ngIf="textSearch.value.length" (click)="resetFilter(textSearch.value)"
+        >- resetar filtro</a
+      >
+    </p>
+  </div>
+</div>
+
+<div class="card-container">
+  <div class="card-list">
+    <div
+      *ngFor="let item of userList"
+      (click)="openDetail(item)"
+      class="card card-element"
+    >
+      <span> {{ item.name }} - {{ item.email }} </span>
+    </div>
+  </div>
+
+  <div *ngIf="userDetail; else notSelected" class="card-result">
+    <div class="card card-result-fields">
+      <span class="card-title">{{ userDetail?.name }}</span>
+      <span class="card-user">{{ '@' + userDetail?.username }}</span>
+      <span>{{ userDetail?.email }}</span>
+      <span>Rua {{ userDetail?.address?.street + ', ' + userDetail?.address?.suite  }}</span>
+      <span>{{ userDetail?.address?.zipcode + ' ' + userDetail?.address?.city }}</span>
+    </div>
+  </div>
+  <ng-template #notSelected> Nenhum usuário selecionado</ng-template>
+</div>

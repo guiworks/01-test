@@ -1,11 +1,22 @@
-import {TestBed} from '@angular/core/testing';
-import {TestService} from './test.service';
+import { TestBed } from '@angular/core/testing';
+import { TestService } from './test.service';
+import { UserSearchComponent } from '../containers/user-search.component';
 
 describe('TestService', () => {
   let service: TestService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [
+        {
+          provide: UserSearchComponent,
+          useValue: {
+            search: () => {},
+            getResult: () => {},
+          },
+        },
+      ],
+    });
     service = TestBed.inject(TestService);
   });
 
